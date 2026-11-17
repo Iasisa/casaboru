@@ -1,0 +1,321 @@
+/* Casa Boru · «Pásale al 56». Entrar a la web es entrar a su casa (ver gusto.md §2). */
+:root {
+  --azul: #000afe;        /* sus pósters de bebidas y las letras de la pared */
+  --azul-hondo: #0b12bf;
+  --marino: #243a5a;      /* los números 56 de la pared */  /* sombra de la misma tinta */
+  --rojo: #d81b25;        /* sus posts «A QUE NO SABÍAS» (un punto más oscuro para leer blanco encima) */
+  --pared: #ebeae5;       /* la pared blanca del 56, con luz de tarde */
+  --papel: #f4f1ec;       /* muro de block pintado */
+  --tinta: #0d0d1a;
+  --gris: #5b5853;
+  --fuente-display: "Antonio", "Arial Narrow", sans-serif;  /* eco de MENÚ BEBIDAS */
+  --fuente-marca: "Instrument Serif", Georgia, serif;     /* eco del «boru» de sus pósters */
+  --fuente-texto: "Instrument Sans", system-ui, sans-serif; /* eco de «PASALE, NO MORDEMOS» */
+  --fuente-ticket: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --festo: 14px;          /* radio del borde festoneado del toldo */
+  --gutter: clamp(16px, 4vw, 56px);
+  --resorte: linear(0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1);
+  --rapido: 180ms;
+  --normal: 420ms;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--papel); color: var(--tinta); font: 400 1rem/1.5 var(--fuente-texto); overflow-x: hidden; }
+h1, h2, h3 { margin: 0; font-family: var(--fuente-display); line-height: 0.95; text-transform: uppercase; }
+img, svg { max-width: 100%; display: block; }
+p { margin: 0; }
+
+.saltar { position: absolute; left: -999px; }
+.saltar:focus { left: 16px; top: 16px; z-index: 50; background: var(--tinta); color: var(--papel); padding: 8px 12px; }
+:focus-visible { outline: 3px solid var(--tinta); outline-offset: 3px; }
+.carta-seccion :focus-visible, .nuevo :focus-visible, .sillas :focus-visible { outline-color: #fff; }
+
+/* Todo lo que se toca responde con resorte */
+button, .cta, .chip, .enlace { transition: transform var(--normal) var(--resorte), background var(--rapido), color var(--rapido); touch-action: manipulation; }
+button:active, .cta:active, .chip:active, .enlace:active { transform: scale(0.94); }
+button, input, select, textarea, .cta { min-height: 44px; font: inherit; }
+button { min-width: 44px; cursor: pointer; }
+
+/* Rótulo de cada parada del recorrido */
+.paso { font: 300 0.85rem/1 var(--fuente-display); text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 14px; }
+.paso::before { content: "→ "; }
+
+/* Corte entre secciones: el borde festoneado de su toldo, en bultos hacia arriba */
+.festoneado {
+  position: relative;
+  margin-top: calc(-1 * var(--festo));
+  padding-top: calc(64px + var(--festo));
+  -webkit-mask: linear-gradient(#000 0 0) 0 var(--festo) / 100% 100% no-repeat, radial-gradient(circle var(--festo) at 50% 100%, #000 98%, #0000) 0 0 / calc(2 * var(--festo)) var(--festo) repeat-x;
+  mask: linear-gradient(#000 0 0) 0 var(--festo) / 100% 100% no-repeat, radial-gradient(circle var(--festo) at 50% 100%, #000 98%, #0000) 0 0 / calc(2 * var(--festo)) var(--festo) repeat-x;
+}
+
+/* ---------- 1 · La pared del 56 ---------- */
+.pared {
+  position: relative; overflow: hidden;
+  min-height: 100svh;
+  padding: 16px var(--gutter) 56px;
+  display: grid; grid-template-rows: auto 1fr auto; gap: 24px;
+  background: radial-gradient(120% 80% at 20% 30%, #f7f6f2, var(--pared) 60%, #dddcd6);
+  color: var(--azul);
+}
+.hojas { /* la sombra de hojas que cae sobre su pared */
+  position: absolute; right: -12%; top: 4%; width: min(78vw, 560px); height: auto;
+  color: #2a2a26; fill: currentColor; opacity: 0.17; filter: blur(6px);
+  pointer-events: none; transform-origin: 100% 0;
+  animation: viento 9s ease-in-out infinite alternate;
+}
+@keyframes viento { from { transform: rotate(-2deg) translateX(0); } to { transform: rotate(2.5deg) translateX(-12px); } }
+
+.pared-sup { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.marca { display: flex; align-items: baseline; gap: 4px; line-height: 1; }
+.marca-casa { font: italic 1.5rem/1 var(--fuente-marca); }
+.marca-boru { font: 2.3rem/0.9 var(--fuente-marca); letter-spacing: -0.02em; }
+.estado { font-size: 0.85rem; font-weight: 600; color: var(--tinta); background: #fff; border: 1.5px solid var(--azul); border-radius: 999px; padding: 6px 12px; }
+.estado:empty { display: none; }
+.estado[data-abierto]::before { content: ""; display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; vertical-align: 1px; background: var(--rojo); }
+.estado[data-abierto="true"]::before { background: #18a558; }
+
+.pared-centro { position: relative; align-self: center; display: grid; justify-items: center; text-align: center; }
+.numero { /* sus números de metal, vectorizados y atornillados a la pared */
+  width: clamp(220px, 74vw, 460px); height: auto; overflow: visible;
+  fill: var(--marino); filter: drop-shadow(10px 14px 7px #0003);
+}
+.digito { transform-box: fill-box; transform-origin: 50% 8%; animation: colgar 1.4s var(--resorte) both; }
+.digito + .digito { animation-delay: 0.12s; }
+.tornillo { fill: #142338; }
+@keyframes colgar { from { transform: rotate(-14deg) translateY(-0.08em); opacity: 0; } to { transform: none; opacity: 1; } }
+
+.pasale { margin-top: clamp(20px, 5vw, 40px); display: grid; gap: 4px; font-family: var(--fuente-texto); text-transform: none; line-height: 1.1; color: var(--azul); }
+.pasale span:first-child { font-weight: 700; font-size: clamp(1.25rem, 5.4vw, 2.3rem); letter-spacing: -0.01em; }
+.pasale span:last-child { font: italic 700 clamp(1.1rem, 4.6vw, 1.9rem)/1.1 var(--fuente-texto); }
+.pasale span { animation: aparecer 0.9s var(--resorte) 0.5s both; }
+.pasale span:last-child { animation-delay: 0.62s; }
+@keyframes aparecer { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+.pared-pie { position: relative; display: grid; gap: 14px; justify-items: center; text-align: center; }
+.pared-dato { font-size: 0.92rem; color: var(--gris); }
+.cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 12px 24px; border-radius: 999px;
+  background: var(--azul); color: #fff; text-decoration: none; font-weight: 600;
+  box-shadow: 0 6px 0 var(--azul-hondo);
+}
+.cta:hover { background: var(--azul-hondo); }
+
+/* ---------- 2 · El toldo: rayas con borde festoneado, lo cruzas para entrar ---------- */
+.toldo { /* la sombra va en el contenedor: la máscara del ::before no se la come */
+  --raya: calc(2 * var(--festo));
+  position: relative; z-index: 4;
+  height: calc(52px + var(--festo)); margin-bottom: calc(-1 * var(--festo));
+  filter: drop-shadow(0 8px 6px #0003);
+}
+.toldo::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(#0002, #0000 10px), repeating-linear-gradient(90deg, #fff 0 var(--raya), var(--azul) var(--raya) calc(2 * var(--raya)));
+  -webkit-mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--festo)) no-repeat, radial-gradient(circle var(--festo) at 50% calc(100% - var(--festo)), #000 98%, #0000) 0 0 / var(--raya) 100% repeat-x;
+  mask: linear-gradient(#000 0 0) 0 0 / 100% calc(100% - var(--festo)) no-repeat, radial-gradient(circle var(--festo) at 50% calc(100% - var(--festo)), #000 98%, #0000) 0 0 / var(--raya) 100% repeat-x;
+}
+
+/* ---------- 3 · La barra: la carta como sus pósters ---------- */
+.barra { position: relative; background: var(--papel); padding: calc(48px + var(--festo)) var(--gutter) 72px; color: var(--azul); }
+.barra-envoltura { max-width: 1320px; margin-inline: auto; display: grid; grid-template-columns: minmax(0, 1fr); gap: 32px; }
+.barra-titulo { font-weight: 100; font-size: clamp(5rem, 26vw, 11rem); line-height: 0.9; padding-top: 0.08em; }
+.barra-nota { margin: 16px 0 20px; max-width: 54ch; color: var(--tinta); font-size: 0.98rem; }
+
+.carta-herramientas { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; position: sticky; top: 0; z-index: 3; background: var(--papel); padding-block: 10px; margin-inline: calc(-1 * var(--gutter)); padding-inline: var(--gutter); }
+/* La barra del buscador tapa de orilla a orilla (los pósters van girados y asomaban) y se desvanece abajo */
+.carta-herramientas::after { content: ""; position: absolute; left: 0; right: 0; top: 100%; height: 28px; background: linear-gradient(var(--papel), #f4f1ec00); pointer-events: none; }
+.carta-buscar { width: 100%; padding: 10px 16px; border-radius: 999px; border: 1.5px solid var(--azul); background: #fff; color: var(--tinta); font-size: 1rem; }
+.carta-buscar::placeholder { color: #5b5f9a; }
+.carta-filtros, .reserva-dias, .reserva-horas { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.chip { position: relative; display: inline-flex; gap: 4px; align-items: center; min-height: 40px; border: 1.5px solid #000afe70; color: var(--azul); border-radius: 999px; padding: 4px 14px; font-size: 0.9rem; cursor: pointer; white-space: nowrap; }
+.chip:has(input:checked) { background: var(--azul); color: #fff; border-color: var(--azul); }
+.chip:has(input:focus-visible) { outline: 3px solid var(--tinta); outline-offset: 2px; }
+.chip:has(input:disabled) { opacity: 0.4; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.carta-filtros .chip { flex: none; min-height: 44px; background: #fff; }
+.carta-filtros .chip:has(input:checked) { background: var(--azul); }
+
+.carta-lista { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px; margin-top: 18px; }
+/* Póster azul (bebidas): papel impreso colgado en la pared */
+.carta-seccion {
+  position: relative; background: var(--azul); color: #fff;
+  padding: 26px 18px 10px; border-radius: 3px;
+  box-shadow: 0 1px 0 #0002, 0 22px 30px -20px #00064d;
+  rotate: -0.6deg;
+}
+.carta-seccion:nth-child(even) { rotate: 0.5deg; }
+.carta-seccion::before { content: "boru"; display: block; text-align: center; font: clamp(3rem, 14vw, 4rem)/0.8 var(--fuente-marca); letter-spacing: -0.02em; }
+.carta-seccion h3 { text-align: center; font: 600 0.95rem/1.2 var(--fuente-texto); letter-spacing: 0.14em; padding: 6px 0 14px; border-bottom: 1.5px solid currentColor; margin-bottom: 4px; }
+.carta-seccion h3::before { content: "club de la cafeína"; display: block; margin-bottom: 14px; font: 0.82rem/1 var(--fuente-marca); letter-spacing: 0.01em; text-transform: none; }
+.carta-seccion .chip { border-color: #ffffff80; color: #fff; }
+.carta-seccion .chip:has(input:checked) { background: #fff; color: var(--azul); border-color: #fff; }
+.carta-items { margin: 0; padding: 0; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) auto 44px; gap: 2px 14px; align-items: center; padding: 12px 0; border-bottom: 1px solid #ffffff2e; list-style: none; }
+.item:last-child { border-bottom: 0; }
+.item-nombre { font-size: 1.08rem; font-weight: 500; }
+.item-precio { font: 300 1.2rem/1 var(--fuente-display); font-variant-numeric: tabular-nums; letter-spacing: 0.02em; }
+.item-desc { grid-column: 1 / 3; grid-row: 2; font-size: 0.88rem; line-height: 1.4; opacity: 0.85; }
+.item-agregar { grid-column: 3; grid-row: 1; width: 44px; height: 44px; border-radius: 50%; border: 0; padding: 0; background: #fff; color: var(--azul); font: 700 1.5rem/1 var(--fuente-texto); }
+.item-agregar:hover { background: var(--rojo); color: #fff; }
+.item-agregar:active { transform: scale(0.82) rotate(-12deg); }
+.item-ajustes {
+  grid-column: 1 / 3; justify-self: start; min-height: 44px; padding: 0 2px; border: 0; background: none; color: inherit;
+  font-size: 0.82rem; opacity: 0.88; text-decoration: underline; text-underline-offset: 3px; text-align: left;
+}
+.item-ajustes::after { content: " ▾"; display: inline-block; transition: transform var(--normal) var(--resorte); }
+.item.abierto .item-ajustes::after { transform: rotate(180deg); }
+.item-variantes { grid-column: 1 / -1; display: none; flex-wrap: wrap; gap: 8px; padding-top: 8px; }
+.item.abierto .item-variantes { display: flex; animation: aparecer var(--normal) var(--resorte); }
+.item-opcion { border: 0; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+.item-opcion legend { font: 300 0.8rem/1 var(--fuente-display); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; padding: 0; }
+.item-aviso { grid-column: 1 / -1; color: #ffd1d3; font-size: 0.85rem; font-weight: 600; }
+.item-aviso:empty { display: none; }
+.carta-vacia { padding: 24px 0; font-size: 1.1rem; color: var(--tinta); }
+
+/* Póster blanco (alimentos): papel blanco con tinta azul, como lo imprimen */
+.carta-seccion:has(.item[data-item="pavo-contempo"]) { background: #fff; color: var(--azul); }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .item { border-color: #000afe24; }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .item-desc { color: var(--tinta); }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .item-agregar { background: var(--azul); color: #fff; }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .item-agregar:hover { background: var(--rojo); }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .chip { border-color: #000afe60; color: var(--azul); }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .chip:has(input:checked) { background: var(--azul); color: #fff; border-color: var(--azul); }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) .item-aviso { color: var(--rojo); }
+.carta-seccion:has(.item[data-item="pavo-contempo"]) :focus-visible { outline-color: var(--tinta); }
+
+/* ---------- El ticket de pick up (carrito) ---------- */
+.barra-lado { min-width: 0; }
+.ticket-vacio { display: none; }
+[data-carrito] { position: fixed; inset: auto 12px max(12px, env(safe-area-inset-bottom)); z-index: 20; max-width: 520px; margin-inline: auto; filter: drop-shadow(0 14px 22px #0006); }
+[data-carrito][hidden] { display: none; }
+.carrito, .ticket-vacio {
+  background: #fff; color: var(--tinta); padding: 12px 16px;
+  /* orillas dentadas de ticket impreso */
+  -webkit-mask: linear-gradient(#000 0 0) 0 8px / 100% calc(100% - 16px) no-repeat, conic-gradient(from 135deg at top, #000 90deg, #0000 0) top / 16px 8px repeat-x, conic-gradient(from -45deg at bottom, #000 90deg, #0000 0) bottom / 16px 8px repeat-x;
+  mask: linear-gradient(#000 0 0) 0 8px / 100% calc(100% - 16px) no-repeat, conic-gradient(from 135deg at top, #000 90deg, #0000 0) top / 16px 8px repeat-x, conic-gradient(from -45deg at bottom, #000 90deg, #0000 0) bottom / 16px 8px repeat-x;
+}
+.carrito { max-height: calc(100dvh - 32px); overflow: auto; overscroll-behavior: contain; }
+.carrito summary { display: flex; gap: 12px; align-items: center; min-height: 52px; cursor: pointer; list-style: none; font: 300 1.15rem/1 var(--fuente-display); text-transform: uppercase; letter-spacing: 0.04em; color: var(--azul); }
+.carrito summary::-webkit-details-marker { display: none; }
+.carrito summary::after { content: "↑"; font-family: var(--fuente-texto); transition: transform var(--normal) var(--resorte); }
+.carrito[open] summary::after { transform: rotate(180deg); }
+.carrito-cuenta { /* el contador es un vaso de la casa */
+  display: inline-grid; place-items: center; min-width: 32px; height: 34px; padding: 4px 8px 0;
+  background: var(--azul); color: #fff; font: 700 0.95rem/1 var(--fuente-texto);
+  clip-path: polygon(0 0, 100% 0, 84% 100%, 16% 100%); border-top: 4px solid var(--azul-hondo);
+}
+.carrito-total { margin-left: auto; font: 700 1rem/1 var(--fuente-ticket); font-variant-numeric: tabular-nums; color: var(--tinta); }
+.carrito summary.brinca .carrito-cuenta { animation: brincar 0.6s var(--resorte); }
+@keyframes brincar { from { transform: translateY(-14px) scale(1.25); } to { transform: none; } }
+.carrito-lineas { margin: 0; padding: 4px 0 8px; border-top: 1.5px dashed #0d0d1a40; font-family: var(--fuente-ticket); }
+.carrito-lineas::before, .ticket-cabeza { display: block; padding: 10px 0 6px; font: 600 0.72rem/1.3 var(--fuente-ticket); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gris); }
+.carrito-lineas::before { content: "Para recoger en el 56 · C. 10, Col. México"; }
+.carrito-lineas li { display: flex; justify-content: space-between; align-items: center; gap: 8px; list-style: none; padding: 6px 0; font-size: 0.88rem; }
+.cantidad { display: inline-flex; align-items: center; gap: 4px; flex: none; }
+.cantidad button { border: 1.5px solid var(--azul); background: #fff; color: var(--azul); border-radius: 50%; width: 44px; height: 44px; padding: 0; font-size: 1.1rem; }
+.cantidad output { min-width: 2ch; text-align: center; font-weight: 700; }
+.carrito-form { display: grid; gap: 4px; padding-bottom: 14px; border-top: 1.5px dashed #0d0d1a40; }
+.carrito-form label { display: grid; gap: 4px; margin-block: 6px; font-size: 0.85rem; font-weight: 600; }
+.carrito-form input, .carrito-form textarea { width: 100%; padding: 10px 12px; border: 1.5px solid #0d0d1a40; border-radius: 8px; background: var(--papel); color: var(--tinta); font-size: 1rem; }
+.carrito-form input:focus, .carrito-form textarea:focus { border-color: var(--azul); outline: none; box-shadow: 0 0 0 3px #000afe33; }
+.carrito-form [hidden], [data-dueno][hidden] { display: none; }
+.carrito-enviar { margin-top: 8px; border: 0; border-radius: 999px; padding: 14px 18px; background: var(--azul); color: #fff; font-weight: 600; font-size: 1.02rem; box-shadow: 0 5px 0 var(--azul-hondo); }
+.carrito-enviar:hover { background: var(--azul-hondo); }
+
+/* Diálogo al mandar: el sello PICK UP cae sobre tu ticket */
+dialog[data-abriendo] {
+  width: min(92vw, 440px); border: 0; border-radius: 6px; padding: 24px 20px 20px; background: #fff; color: var(--tinta);
+  box-shadow: 0 30px 80px -20px #000a; position: fixed; overflow: visible;
+}
+dialog[data-abriendo]::backdrop { background: #000a5acc; }
+dialog[data-abriendo][open] { animation: aparecer 0.6s var(--resorte); }
+dialog[data-abriendo]::before {
+  content: "PICK UP"; position: absolute; top: -22px; right: 14px; rotate: 10deg;
+  font: 700 1.6rem/1 var(--fuente-display); color: var(--rojo); background: #fff; border: 3px solid var(--rojo); border-radius: 8px; padding: 4px 10px;
+  animation: sellar 0.6s var(--resorte) 0.25s both;
+}
+@keyframes sellar { from { transform: scale(1.9) rotate(-25deg); opacity: 0; } to { transform: none; opacity: 1; } }
+dialog[data-abriendo] p { margin-bottom: 10px; font-weight: 600; }
+dialog[data-abriendo] pre { white-space: pre-wrap; font: 0.85rem/1.45 var(--fuente-ticket); background: var(--papel); border-radius: 6px; padding: 12px; max-height: 45vh; overflow: auto; }
+dialog[data-abriendo] .cta { margin: 14px 8px 0 0; }
+dialog[data-abriendo] .cta::after { content: "→"; }
+dialog[data-abriendo] button { margin-top: 14px; border: 1.5px solid var(--tinta); background: #fff; border-radius: 999px; padding: 0 18px; }
+
+/* ---------- 4 · La vitrina ---------- */
+.vitrina { z-index: 2; background: #fff; color: var(--tinta); padding-inline: var(--gutter); padding-bottom: 72px; display: grid; gap: 32px; align-items: center; }
+.vitrina-foto { position: relative; margin: 0; rotate: -1.2deg; }
+.vitrina-foto img { width: 100%; height: auto; border-radius: 4px; box-shadow: 0 22px 40px -22px #0008; }
+.vitrina-foto::before { /* la cinta azul con la que pegan fotos en su vitrina */
+  content: ""; position: absolute; z-index: 1; top: -12px; left: 18%; width: 92px; height: 26px; background: var(--azul); opacity: 0.92; rotate: -4deg;
+}
+.vitrina-texto { display: grid; gap: 16px; justify-items: start; color: var(--azul); }
+.vitrina-texto > p:not(.paso) { color: var(--tinta); max-width: 44ch; }
+.vitrina-titulo { font: italic 700 clamp(2.3rem, 9.5vw, 4.6rem)/1 var(--fuente-texto); text-transform: none; letter-spacing: -0.02em; }
+
+/* ---------- 5 · Ya está en barra (sus pósters rojos) ---------- */
+.nuevo { z-index: 3; background: var(--rojo); color: #fff; padding-inline: var(--gutter); padding-bottom: 72px; }
+.nuevo-titulo { font-weight: 700; font-size: clamp(3rem, 13vw, 7.5rem); line-height: 0.88; max-width: 11ch; }
+.nuevo-sub { margin-top: 64px; font-weight: 700; font-size: clamp(2rem, 8vw, 4rem); line-height: 1.02; max-width: 14ch; }
+.nuevo-lista { list-style: none; margin: 32px 0 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); counter-reset: s; }
+.nuevo-lista li { counter-increment: s; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 16px; padding: 18px 0; border-top: 2px solid #fff; }
+.nuevo-lista li::before { content: counter(s, decimal-leading-zero); grid-row: span 2; font: 300 1.4rem/1 var(--fuente-display); padding-top: 6px; }
+.nuevo-lista b { font: 700 clamp(1.8rem, 7vw, 3rem)/0.95 var(--fuente-display); text-transform: uppercase; }
+.nuevo-lista--chica b { font-size: clamp(1.4rem, 5vw, 2.1rem); }
+.nuevo-lista span { font-size: 1rem; max-width: 46ch; }
+
+/* ---------- 6 · Las sillas azules: dónde y cuándo ---------- */
+.sillas { z-index: 4; background: var(--azul); color: #fff; padding-inline: var(--gutter); padding-bottom: 72px; }
+.sillas-sello { /* el respaldo de sus sillas plegables */
+  display: inline-block; margin-bottom: 22px; padding: 8px 14px; border: 2px solid #fff; border-radius: 6px;
+  font: 700 0.85rem/1 var(--fuente-texto); letter-spacing: 0.12em; text-transform: uppercase; rotate: -3deg;
+}
+.sillas-titulo { font-weight: 100; font-size: clamp(3rem, 14vw, 8rem); line-height: 0.88; }
+.sillas-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; margin-top: 40px; }
+.sillas-bloque { display: grid; gap: 10px; align-content: start; padding-top: 14px; border-top: 2px solid #fff; }
+.sillas-bloque h3 { font-weight: 300; font-size: 1.5rem; }
+.sillas-bloque address { font-style: normal; font-size: 1.1rem; }
+.horario { border-collapse: collapse; width: 100%; font-size: 1rem; }
+.horario th { text-align: left; font-weight: 500; padding: 6px 12px 6px 0; }
+.horario td { text-align: right; font-variant-numeric: tabular-nums; }
+.enlace { justify-self: start; display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1.5px solid currentColor; border-radius: 999px; color: inherit; text-decoration: none; font-weight: 600; }
+.vitrina .enlace { color: var(--azul); }
+.vitrina .enlace:hover { background: var(--azul); color: #fff; }
+.sillas .enlace:hover { background: #fff; color: var(--azul); }
+
+.pie { background: var(--pared); color: var(--azul); padding: 40px var(--gutter) calc(120px + env(safe-area-inset-bottom)); overflow: hidden; }
+.pie-grande { font: 100 clamp(3rem, 15.5vw, 15rem)/0.85 var(--fuente-display); text-transform: uppercase; white-space: nowrap; margin-bottom: 24px; }
+.pie p:last-child { color: var(--tinta); }
+.pie a { color: var(--azul); }
+
+/* Nada aparece de golpe */
+[data-entra] { opacity: 0; transform: translateY(18px); transition: opacity var(--normal) ease-out, transform var(--normal) var(--resorte); }
+[data-entra].visible { opacity: 1; transform: none; }
+
+/* ---------- Tablet / desktop ---------- */
+@media (min-width: 720px) {
+  .carta-lista { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 44px 36px; align-items: start; }
+  .nuevo-lista { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 32px; }
+  .sillas-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
+  .vitrina { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 56px; }
+}
+@media (min-width: 1024px) {
+  .hojas { right: 2%; width: 520px; }
+  .barra-envoltura { grid-template-columns: minmax(0, 1fr) 380px; gap: 56px; }
+  .carta-herramientas { margin-inline: 0; padding-inline: 0; box-shadow: 0 0 0 40px var(--papel); clip-path: inset(0 -40px -28px); }
+  .carta-herramientas::after { left: -40px; right: -40px; }
+  .barra-lado { position: sticky; top: 24px; align-self: start; }
+  [data-carrito] { position: static; max-width: none; }
+  .carrito { max-height: calc(100dvh - 48px); }
+  .carrito summary::after { content: none; }
+  [data-carrito][hidden] + .ticket-vacio { display: block; rotate: 1.5deg; }
+  .ticket-cabeza { border-bottom: 1.5px dashed #0d0d1a40; margin-bottom: 10px; }
+  .pie { padding-bottom: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; }
+  [data-entra] { opacity: 1; transform: none; }
+  html { scroll-behavior: auto; }
+}

@@ -1,0 +1,196 @@
+{
+  "_ayuda": "Única fuente de datos de la web. Cada dato real lleva su fuente en 'fuentes'. Lo que no está confirmado va en 'por_confirmar' y NO se muestra como promesa. Este archivo trae datos de EJEMPLO: reemplázalos todos. 'horario' usa días 0-6 (0 = domingo) en la hora de 'zona'. '{negocio}' en saludos = nombre. Un campo con 'si_modo' solo se pide con ese modo de entrega.",
+  "nombre": "Bruselas",
+  "usuario_ig": "negocio.ejemplo",
+  "descripcion": "Una línea real sacada de su bio.",
+  "whatsapp": "51999111222",
+  "moneda": {
+    "simbolo": "S/",
+    "decimales": 2,
+    "locale": "es-PE"
+  },
+  "direccion": "Calle Ejemplo 123, Ciudad",
+  "maps": "",
+  "horario": [
+    {
+      "etiqueta": "Lunes a viernes",
+      "dias": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "abre": "08:00",
+      "cierra": "13:00"
+    },
+    {
+      "etiqueta": "Sábado",
+      "dias": [
+        6
+      ],
+      "abre": "09:00",
+      "cierra": "14:00"
+    }
+  ],
+  "pedidos": {
+    "activo": true,
+    "saludo": "Hola {negocio} 🌿 Quiero hacer un pedido:",
+    "modos": [
+      "Recojo en el local",
+      "Delivery"
+    ],
+    "pide": [
+      {
+        "id": "nombre",
+        "etiqueta": "Nombre",
+        "tipo": "text",
+        "requerido": true
+      },
+      {
+        "id": "modo",
+        "etiqueta": "Entrega",
+        "tipo": "modo",
+        "requerido": true
+      },
+      {
+        "id": "direccion",
+        "etiqueta": "Dirección",
+        "tipo": "text",
+        "requerido": true,
+        "si_modo": "Delivery"
+      },
+      {
+        "id": "hora",
+        "etiqueta": "Hora",
+        "tipo": "time",
+        "requerido": false
+      },
+      {
+        "id": "notas",
+        "etiqueta": "Notas",
+        "tipo": "textarea",
+        "requerido": false
+      }
+    ],
+    "boton": "Enviar pedido por WhatsApp",
+    "abriendo": "Abriendo WhatsApp con tu pedido…"
+  },
+  "carta": [
+    {
+      "seccion": "Espresso Bar",
+      "items": [
+        {
+          "id": "espresso",
+          "nombre": "Espresso",
+          "precio": 8,
+          "emoji": "☕"
+        },
+        {
+          "id": "machiatto-cortado",
+          "nombre": "Machiatto/Cortado",
+          "precio": 10,
+          "opciones": [
+            {
+              "nombre": "Tipo",
+              "valores": [
+                "Machiatto",
+                "Cortado"
+              ]
+            }
+          ],
+          "emoji": "☕"
+        },
+        {
+          "id": "latte-vainilla",
+          "nombre": "Latte Vainilla",
+          "precio": 14,
+          "opciones": [
+            {
+              "nombre": "Leche",
+              "valores": [
+                "Entera",
+                "Avena",
+                "Almendra"
+              ]
+            }
+          ],
+          "extras": [
+            {
+              "nombre": "Leche vegetal",
+              "precio": 3.5
+            }
+          ],
+          "emoji": "☕"
+        }
+      ]
+    }
+  ],
+  "reservas": {
+    "activo": true,
+    "saludo": "Hola, quiero reservar:",
+    "recurso": "Cancha",
+    "opciones": [
+      "Cancha 1",
+      "Cancha 2"
+    ],
+    "duraciones": [
+      60,
+      90,
+      120
+    ],
+    "tarifas": [
+      {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "07:00",
+        "hasta": "18:00",
+        "precio_hora": 40
+      },
+      {
+        "dias": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "desde": "18:00",
+        "hasta": "23:00",
+        "precio_hora": 60
+      },
+      {
+        "dias": [
+          0,
+          6
+        ],
+        "desde": "08:00",
+        "hasta": "22:00",
+        "precio_hora": 60
+      }
+    ],
+    "pide": [
+      {
+        "id": "nombre",
+        "etiqueta": "Nombre",
+        "tipo": "text",
+        "requerido": true
+      }
+    ]
+  },
+  "fuentes": {
+    "carta": "PDF de su carta (link en la bio)",
+    "whatsapp": "link en la bio",
+    "horario": "destacada 'Horario'"
+  },
+  "por_confirmar": [
+    "¿Hacen delivery? (en el ejemplo está activo: quítalo si no lo confirman)",
+    "¿Las tarifas de 2026 siguen vigentes?"
+  ],
+  "zona": "America/Lima"
+}

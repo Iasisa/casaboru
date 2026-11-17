@@ -1,0 +1,1129 @@
+{
+ "nombre": "Casa Boru",
+ "usuario_ig": "casaboru",
+ "descripcion": "Club de la cafeína. No mordemos, tenemos buen café (y pick up).",
+ "whatsapp": "",
+ "moneda": {
+  "simbolo": "$",
+  "decimales": 2,
+  "locale": "es-MX"
+ },
+ "direccion": "C. 10 #56 por 25 y 27, Col. México, Mérida, Yuc.",
+ "maps": "https://maps.app.goo.gl/sjQ2ipDfFD4e4xiMA",
+ "zona": "America/Merida",
+ "horario": [
+  {
+   "etiqueta": "Lunes a viernes",
+   "dias": [
+    1,
+    2,
+    3,
+    4,
+    5
+   ],
+   "abre": "08:30",
+   "cierra": "18:00"
+  },
+  {
+   "etiqueta": "Sábado",
+   "dias": [
+    6
+   ],
+   "abre": "08:30",
+   "cierra": "14:00"
+  }
+ ],
+ "pedidos": {
+  "activo": true,
+  "instagram": true,
+  "saludo": "Hola Boru 🫂 Quiero pedir para pick up en el 56:",
+  "modos": [
+   "Pick up en barra"
+  ],
+  "pide": [
+   {
+    "id": "nombre",
+    "etiqueta": "A nombre de",
+    "tipo": "text",
+    "requerido": true
+   },
+   {
+    "id": "hora",
+    "etiqueta": "¿A qué hora pasas?",
+    "tipo": "time",
+    "requerido": false
+   },
+   {
+    "id": "notas",
+    "etiqueta": "Notas para la barra",
+    "tipo": "textarea",
+    "requerido": false
+   }
+  ],
+  "boton": "Mandar a la barra por DM 🫵🏻",
+  "abriendo": "Pasando tu ticket a la barra…"
+ },
+ "carta_ui": {
+  "buscador": true,
+  "placeholder": "¿Qué se te antoja? (ej. matcha)"
+ },
+ "carta": [
+  {
+   "seccion": "Bebidas frías",
+   "items": [
+    {
+     "id": "americano-frio",
+     "nombre": "Americano",
+     "precio": 65,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "latte-frio",
+     "nombre": "Latte",
+     "precio": 80,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "latte-moka-frio",
+     "nombre": "Latte moka",
+     "precio": 90,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "coco-espresso",
+     "nombre": "Coco espresso",
+     "precio": 90,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "naranjo-espresso",
+     "nombre": "Naranjo espresso",
+     "precio": 85,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "chai-latte-frio",
+     "nombre": "Chai latte",
+     "precio": 80,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "dirty-chai-frio",
+     "nombre": "Dirty Chai",
+     "precio": 90,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "malcriado-caramel-frio",
+     "nombre": "Malcriado caramel",
+     "precio": 90,
+     "emoji": "🧊",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seccion": "Bebidas calientes",
+   "items": [
+    {
+     "id": "americano-caliente",
+     "nombre": "Americano",
+     "precio": 60,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "latte-caliente",
+     "nombre": "Latte",
+     "precio": 75,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "latte-moka-caliente",
+     "nombre": "Latte moka",
+     "precio": 80,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "chai-latte-caliente",
+     "nombre": "Chai latte",
+     "precio": 70,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "dirty-chai-caliente",
+     "nombre": "Dirty Chai",
+     "precio": 80,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "espresso-doble",
+     "nombre": "Espresso doble",
+     "precio": 40,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "flat-white",
+     "nombre": "Flat white",
+     "precio": 70,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "cortadito",
+     "nombre": "Cortadito",
+     "precio": 65,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "malcriado-caramel-caliente",
+     "nombre": "Malcriado caramel",
+     "precio": 85,
+     "emoji": "☕",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seccion": "Matchas para el crew",
+   "items": [
+    {
+     "id": "matcha-banana",
+     "nombre": "Matcha banana",
+     "precio": 95,
+     "emoji": "🍵",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "matcha-strawberry",
+     "nombre": "Matcha strawberry",
+     "precio": 95,
+     "emoji": "🍵",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "matcha-latte",
+     "nombre": "Matcha latte",
+     "precio": 90,
+     "emoji": "🍵",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    },
+    {
+     "id": "matcha-latte-caliente",
+     "nombre": "Matcha latte caliente",
+     "precio": 85,
+     "emoji": "🍵",
+     "extras": [
+      {
+       "nombre": "Jarabe vainilla",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe avellana",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe caramelo SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe vainilla SF",
+       "precio": 12
+      },
+      {
+       "nombre": "Jarabe agave",
+       "precio": 12
+      },
+      {
+       "nombre": "Leche de avena OATLY!",
+       "precio": 12
+      },
+      {
+       "nombre": "Cold foam",
+       "precio": 15
+      },
+      {
+       "nombre": "Espresso extra",
+       "precio": 25
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "seccion": "Sandwiches del crew",
+   "items": [
+    {
+     "id": "pavo-contempo",
+     "nombre": "Pavo Contempo",
+     "precio": 110,
+     "emoji": "🥪",
+     "descripcion": "Pesto, queso chedar, jamón de pavo, jitomate, arúgula, aderezo de la casa y un toque de miel. Acompañado de papas chips.",
+     "opciones": [
+      {
+       "nombre": "Pan",
+       "valores": [
+        "Masa madre",
+        "Focaccia"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "boru-bagel",
+     "nombre": "Boru Bagel",
+     "precio": 80,
+     "emoji": "🥯",
+     "descripcion": "Pan bagel tostado con queso chedar y jamon de pavo. Acompañado de tomate y arúgula.",
+     "extras": [
+      {
+       "nombre": "Jamón serrano",
+       "precio": 15
+      }
+     ]
+    },
+    {
+     "id": "boru-everything-bagel",
+     "nombre": "Boru Everything Bagel",
+     "precio": 100,
+     "emoji": "🥯",
+     "descripcion": "Pan bagel tostado con nuestra mezcla especial de queso crema (ajo, cebolla, ajonjolí negro y semillas de amapola), jamón de pavo, tomate fresco y arúgula.",
+     "extras": [
+      {
+       "nombre": "Jamón serrano",
+       "precio": 15
+      }
+     ]
+    },
+    {
+     "id": "santo-pesto",
+     "nombre": "Santo Pesto",
+     "precio": 125,
+     "emoji": "🥪",
+     "descripcion": "Pesto, queso mozzarella, jitomate, arúgula, aderezo de la casa y un toque de miel. Acompañado de papas chips.",
+     "opciones": [
+      {
+       "nombre": "Pan",
+       "valores": [
+        "Masa madre",
+        "Focaccia"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "alto-serrano",
+     "nombre": "Alto Serrano",
+     "precio": 140,
+     "emoji": "🥪",
+     "descripcion": "Pesto, jamón serrano, queso mozzarella, jitomate, arúgula, aderezo de la casa y un toque de miel. Acompañado de papas chips.",
+     "opciones": [
+      {
+       "nombre": "Pan",
+       "valores": [
+        "Masa madre",
+        "Focaccia"
+       ]
+      }
+     ]
+    },
+    {
+     "id": "econoboru",
+     "nombre": "Econoboru",
+     "precio": 120,
+     "emoji": "🥪",
+     "descripcion": "Sandwichito de masa madre + americano.",
+     "opciones": [
+      {
+       "nombre": "Americano",
+       "valores": [
+        "Frío",
+        "Caliente"
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "reservas": {
+  "activo": false
+ },
+ "fuentes": {
+  "carta": "Destacada MENÚ de Instagram (hace ~11 semanas, oct 2026)",
+  "horario": "bio de Instagram",
+  "direccion": "link de Maps en la bio",
+  "pedidos": "post DdR7gRgFAnE: pick up por DM"
+ },
+ "por_confirmar": [
+  "Precios vigentes (carta de hace ~11 semanas)",
+  "¿Tienen WhatsApp? Hoy los pedidos van por DM",
+  "Precios de bebidas de temporada y combinaciones del crew",
+  "¿Jarabes, avena, cold foam y espresso extra aplican a todas las bebidas?",
+  "¿Econoboru: americano frío o caliente?",
+  "Delivery: no lo mencionan, no se ofrece",
+  "Teléfono: Maps 999 505 9619 vs Facebook 999 552 7017 (hoy no se muestra ninguno)",
+  "Precios: mostrador (jul) vs destacada (ago); la web usa la destacada",
+  "Vitrina: qué venden y precios (hoy sin precio)",
+  "José, María, Chatita y café de olla: ¿siguen? ¿precio? (hoy sin precio)",
+  "Evento Harry Potter 27–28 nov: ¿se anuncia en la web?",
+  "Permiso para usar la foto de la vitrina (de su ficha de Maps) y color real del toldo"
+ ]
+}
